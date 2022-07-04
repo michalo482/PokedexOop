@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Pokedex_oop_views.Views.PokedexTrainerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Pokedex_oop_views.Views" 
+             xmlns:components="clr-namespace:Pokedex_oop_views.Components" xmlns:viewmodels="clr-namespace:Pokedex_oop_views.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:PokedexTrainerListingViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Pokedex Trainers" Style="{StaticResource PageHeader}" FontWeight="Bold" Grid.Column="0" />
+            <Button Content="Dodaj trenera" Grid.Column="1" Padding="15 5" Command="{Binding AddTrainerCommand}" Cursor="Hand"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <components:PokedexTrainerListing Grid.Column="0" DataContext="{Binding PokedexTrainerListingViewModel}"/>
+            <components:PokedexTrainerDetails Grid.Column="1" Margin="10 0 0 0" DataContext="{Binding PokedexTrainerDetailsViewModel}"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Pokedex_oop_views.Views.AddPokedexTrainerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Pokedex_oop_views.Views" xmlns:components="clr-namespace:Pokedex_oop_views.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Dodaj nowego trenera:" Style="{StaticResource PageHeader}" FontWeight="Bold" Grid.Row="0"/>
+
+        <components:PokedexTrainerDetailsForm Margin="0 20 0 0" Grid.Row="1" DataContext="{Binding PokedexTrainerDetailsFormViewModel}"/>
+
+    </Grid>
+</UserControl>
