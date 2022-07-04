@@ -28,7 +28,7 @@ namespace Pokedex_oop_views.ViewModels
                 NickName = pokedexTrainer.NickName,
                 FullName = pokedexTrainer.FullName,
                 Age = pokedexTrainer.Age,
-                Region = pokedexTrainer.Region,
+                RegionId = pokedexTrainer.RegionId,
                 DateOfJoining = pokedexTrainer.DateOfJoining
                 
             };

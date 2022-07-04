@@ -20,7 +20,7 @@ namespace Pokedex_oop_views.ViewModels
         public string NickName => SelectedPokedexTrainer?.NickName ?? "Nieznany";
         public string FullName => SelectedPokedexTrainer?.FullName ?? "Brak danych";
         public int Age => SelectedPokedexTrainer?.Age ?? 0;
-        public string Region => SelectedPokedexTrainer?.Region ?? "Default";
+        public int RegionId => SelectedPokedexTrainer?.RegionId ?? 1;
         public DateTime DateOfJoining => SelectedPokedexTrainer?.DateOfJoining ?? DateTime.Now;
 
         public ICommand? AddPokemonCommand { get; }
@@ -45,7 +45,7 @@ namespace Pokedex_oop_views.ViewModels
             OnPropertyChanged(nameof(NickName));
             OnPropertyChanged(nameof(FullName));
             OnPropertyChanged(nameof(Age));
-            OnPropertyChanged(nameof(Region));
+            OnPropertyChanged(nameof(RegionId));
             OnPropertyChanged(nameof(DateOfJoining));
         }
     }

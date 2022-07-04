@@ -7,6 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Pokedex_oop_views.Stores;
+using Pokedex_oop_domain.Queries;
+using Pokedex_oop_domain.Commands;
 
 namespace Pokedex_oop_views
 {
@@ -16,6 +18,10 @@ namespace Pokedex_oop_views
     public partial class App : Application
     {
         private readonly ModalNavigationStore _modalNavigationStore;
+        private readonly IGetAllPokkedexTrainersQuery _getAllPokedexTrainerCommand;
+        private readonly ICreatePokedexTrainerCommand _createPokedexTrainerCommand;
+        private readonly IUpdatePokedexTrainerCommand _updatePokedexTrainerCommand;
+        private readonly IDeletePokedexTrainerCommand _deletePokedexTrainerCommand;
         private readonly SelectedPokedexTrainerStore _selectedPokedexTrainer;
         private readonly PokedexTrainerStore _pokedexTrainerStore;
 

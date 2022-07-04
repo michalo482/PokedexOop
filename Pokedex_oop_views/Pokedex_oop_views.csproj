@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pokedex_oop_domain\Pokedex_oop_domain.csproj" />
+    <ProjectReference Include="..\Pokedex_oop_entity_framework\Pokedex_oop_entity_framework.csproj" />
   </ItemGroup>
 
 </Project>

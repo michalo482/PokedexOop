@@ -55,18 +55,18 @@ namespace Pokedex_oop_views.ViewModels
             }
         }
 
-        private string _region;
+        private int _regionId;
 
-        public string Region
+        public int RegionId
         {
             get
             {
-                return _region;
+                return _regionId;
             }
             set
             {
-                _region = value;
-                OnPropertyChanged(nameof(Region));
+                _regionId = value;
+                OnPropertyChanged(nameof(RegionId));
             }
         }
 

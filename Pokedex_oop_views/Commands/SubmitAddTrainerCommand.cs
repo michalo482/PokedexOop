@@ -28,8 +28,9 @@ namespace Pokedex_oop_views.Commands
             // TODO: Add code to add trainer to database
 
             PokedexTrainerDetailsFormViewModel formViewModel = _addPokedexTrainerViewModel.PokedexTrainerDetailsFormViewModel;
+            
 
-            PokedexTrainer pokedexTrainer = new PokedexTrainer(Guid.NewGuid(), formViewModel.NickName, formViewModel.FullName, formViewModel.Age, formViewModel.Region, formViewModel.DateOfJoining);
+            PokedexTrainer pokedexTrainer = new PokedexTrainer(Guid.NewGuid(), formViewModel.NickName, formViewModel.FullName, formViewModel.Age, formViewModel.RegionId, formViewModel.DateOfJoining);
 
             try
             {
