@@ -1,5 +1,5 @@
 ﻿using Pokedex_oop_views.Commands;
-using Pokedex_oop_views.Models;
+using Pokedex_oop_domain.Models;
 using Pokedex_oop_views.Stores;
 using System;
 using System.Collections.Generic;

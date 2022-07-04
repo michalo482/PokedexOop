@@ -1,4 +1,4 @@
-﻿using Pokedex_oop_views.Models;
+﻿using Pokedex_oop_domain.Models;
 using Pokedex_oop_views.Stores;
 using Pokedex_oop_views.ViewModels;
 using System;

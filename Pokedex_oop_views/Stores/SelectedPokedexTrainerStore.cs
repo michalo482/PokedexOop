@@ -1,4 +1,4 @@
-﻿using Pokedex_oop_views.Models;
+﻿using Pokedex_oop_domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

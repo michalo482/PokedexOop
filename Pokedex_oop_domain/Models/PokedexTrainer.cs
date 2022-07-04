@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pokedex_oop_views.Models
+namespace Pokedex_oop_domain.Models
 {
     public class PokedexTrainer
     {
