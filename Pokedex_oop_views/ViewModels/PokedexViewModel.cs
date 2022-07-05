@@ -19,7 +19,7 @@ namespace Pokedex_oop_views.ViewModels
 
         public PokedexViewModel(PokedexTrainerStore pokedexTrainerStore, SelectedPokedexTrainerStore selectedPokedexTrainerStore, ModalNavigationStore modalNavigationStore)
         {
-            PokedexTrainerListingViewModel = new PokedexTrainerListingViewModel(pokedexTrainerStore, selectedPokedexTrainerStore, modalNavigationStore);
+            PokedexTrainerListingViewModel = PokedexTrainerListingViewModel.LoadViewModel(pokedexTrainerStore, selectedPokedexTrainerStore, modalNavigationStore);
             PokedexTrainerDetailsViewModel = new PokedexTrainerDetailsViewModel(selectedPokedexTrainerStore);
             PokedexPokemonListingViewModel = new PokedexPokemonListingViewModel();
 

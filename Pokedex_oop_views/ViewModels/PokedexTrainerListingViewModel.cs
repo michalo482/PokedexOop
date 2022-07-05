@@ -38,7 +38,9 @@ namespace Pokedex_oop_views.ViewModels
                 _selectedPokedexTrainerStore.SelectedPokedexTrainer = _selectedPokedexTrainerListingItemViewModel?.PokedexTrainer;
             }
         }
-              
+
+        public ICommand LoadPokedexTrainerCommand { get; }
+
         public PokedexTrainerListingViewModel(PokedexTrainerStore pokedexTrainerStore, SelectedPokedexTrainerStore selectedPokedexTrainerStore, ModalNavigationStore modalNavigationStore)
         {
             _pokedexTrainerStore = pokedexTrainerStore;
@@ -46,14 +48,49 @@ namespace Pokedex_oop_views.ViewModels
             _modalNavigationStore = modalNavigationStore;
             _pokedexTrainerListing = new ObservableCollection<PokedexListingItemViewModel>();
 
+
+            LoadPokedexTrainerCommand = new LoadPokedexTrainersCommand(pokedexTrainerStore);
+
+            _pokedexTrainerStore.PokedexTrainerLoaded += PokedexTrainerStore_PokedexTrainerLoaded;
+
             _pokedexTrainerStore.PokedexTrainerAdded += PokedexTrainerStore_PokedexTrainerAdded;
             _pokedexTrainerStore.PokedexTrainerUpdated += PokedexTrainerStore_PokedexTrainerUpdated;
+            _pokedexTrainerStore.PokedexTrainerDeleted += okedexTrainerStore_PokedexTrainerDeleted;
 
             /*AddPokedexTrainer(new PokedexTrainer("Ash", "Ash Keczup", 16, "Kanto", date), modalNavigationStore);
             AddPokedexTrainer(new PokedexTrainer("Misty", "Misty Keczup", 14, "Kanto", date), modalNavigationStore);
             AddPokedexTrainer(new PokedexTrainer("Brock", "Brock Keczup", 22, "Kanto", date), modalNavigationStore);*/
 
         }
+
+        private void okedexTrainerStore_PokedexTrainerDeleted(Guid obj)
+        {
+            PokedexListingItemViewModel itemViewModel = _pokedexTrainerListing.FirstOrDefault(x => x.PokedexTrainer.Id == obj);
+
+            if (itemViewModel != null)
+            {
+                _pokedexTrainerListing.Remove(itemViewModel);
+            }
+        }
+
+        private void PokedexTrainerStore_PokedexTrainerLoaded()
+        {
+            _pokedexTrainerListing.Clear();
+
+            foreach (PokedexTrainer item in _pokedexTrainerStore.PokedexTrainers)
+            {
+                AddPokedexTrainer(item);
+                
+            }
+        }
+
+        public static PokedexTrainerListingViewModel LoadViewModel(PokedexTrainerStore pokedexTrainerStore, SelectedPokedexTrainerStore selectedPokedexTrainerStore, ModalNavigationStore modalNavigationStore)
+        {
+            PokedexTrainerListingViewModel viewModel = new PokedexTrainerListingViewModel(pokedexTrainerStore, selectedPokedexTrainerStore, modalNavigationStore);
+            viewModel.LoadPokedexTrainerCommand.Execute(null);
+            return viewModel;
+        }
+        
 
         private void PokedexTrainerStore_PokedexTrainerUpdated(PokedexTrainer pokedexTrainer)
         {
@@ -67,8 +104,10 @@ namespace Pokedex_oop_views.ViewModels
 
         protected override void Dispose()
         {
+            _pokedexTrainerStore.PokedexTrainerLoaded -= PokedexTrainerStore_PokedexTrainerLoaded;
             _pokedexTrainerStore.PokedexTrainerAdded -= PokedexTrainerStore_PokedexTrainerAdded;
             _pokedexTrainerStore.PokedexTrainerUpdated -= PokedexTrainerStore_PokedexTrainerUpdated;
+            _pokedexTrainerStore.PokedexTrainerDeleted -= okedexTrainerStore_PokedexTrainerDeleted;
             base.Dispose();
         }
 

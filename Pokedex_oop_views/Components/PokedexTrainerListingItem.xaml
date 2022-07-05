@@ -58,7 +58,7 @@
                             </Style>
                         </StackPanel.Resources>
                         <Button Content="Edytuj" Command="{Binding EditCommand}"/>
-                        <Button Content="Usuń" Command="{Binding RemoveCommand}"/>
+                        <Button Content="Usuń" Command="{Binding DeleteCommand}"/>
                     </StackPanel>
                 </Border>
             </custom:DropdownMenu>

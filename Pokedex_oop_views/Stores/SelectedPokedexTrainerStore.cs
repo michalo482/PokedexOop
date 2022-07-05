@@ -18,6 +18,12 @@ namespace Pokedex_oop_views.Stores
             _pokedexTrainerStore = pokedexTrainerStore;
 
             _pokedexTrainerStore.PokedexTrainerUpdated += PokedexTrainerStore_PokedexTrainerUpdated;
+            _pokedexTrainerStore.PokedexTrainerDeleted += PokedexTrainerStore_PokedexTrainerDeleted;
+        }
+
+        private void PokedexTrainerStore_PokedexTrainerDeleted(Guid obj)
+        {
+            _selectedPokedexTrainer = null;
         }
 
         private void PokedexTrainerStore_PokedexTrainerUpdated(PokedexTrainer obj)

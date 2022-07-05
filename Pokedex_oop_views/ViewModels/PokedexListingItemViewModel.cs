@@ -20,7 +20,7 @@ namespace Pokedex_oop_views.ViewModels
         public string NickName => PokedexTrainer.NickName;
 
         public ICommand? EditCommand { get; }
-        public ICommand? RemoveCommand { get; }
+        public ICommand? DeleteCommand { get; }
 
         
 
@@ -29,6 +29,7 @@ namespace Pokedex_oop_views.ViewModels
             PokedexTrainer = pokedexTrainer;
 
             EditCommand = new OpenEditTrainerCommand(this, pokedexTrainerStore, modalNavigationStore);
+            DeleteCommand = new DeletePokedexTrainerCommand(this, pokedexTrainerStore);
         }
 
         public void Update(PokedexTrainer pokedexTrainer)
