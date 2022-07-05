@@ -70,6 +70,21 @@ namespace Pokedex_oop_views.ViewModels
             }
         }
 
+        private int _pokemonId;
+
+        public int PokemonId
+        {
+            get
+            {
+                return _pokemonId;
+            }
+            set
+            {
+                _pokemonId = value;
+                OnPropertyChanged(nameof(PokemonId));
+            }
+        }        
+
         private DateTime _dateOfJoining;
 
         public PokedexTrainerDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand)

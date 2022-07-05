@@ -30,7 +30,7 @@ namespace Pokedex_oop_views.Commands
             PokedexTrainerDetailsFormViewModel formViewModel = _addPokedexTrainerViewModel.PokedexTrainerDetailsFormViewModel;
             
 
-            PokedexTrainer pokedexTrainer = new PokedexTrainer(Guid.NewGuid(), formViewModel.NickName, formViewModel.FullName, formViewModel.Age, formViewModel.RegionId, formViewModel.DateOfJoining);
+            PokedexTrainer pokedexTrainer = new PokedexTrainer(Guid.NewGuid(), formViewModel.NickName, formViewModel.FullName, formViewModel.Age, formViewModel.RegionId, formViewModel.PokemonId, formViewModel.DateOfJoining);
 
             try
             {

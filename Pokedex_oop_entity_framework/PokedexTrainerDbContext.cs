@@ -15,5 +15,8 @@ namespace Pokedex_oop_entity_framework
         }
 
         public DbSet<PokedexTrainerDto> PokedexTrainers { get; set; }
+        public DbSet<PokedexRegionDto> pokedexRegionDtos { get; set; }
+        public DbSet<PokedexPokemonElementTypeDto> pokedexPokemonElementTypeDtos { get; set; }
+        public DbSet<PokedexPokemonDto> pokedexPokemonDtos { get; set; }
     }
 }

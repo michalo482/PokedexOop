@@ -29,7 +29,7 @@ namespace Pokedex_oop_entity_framework.Commands
                     FullName = pokedexTrainer.FullName,
                     Age = pokedexTrainer.Age,
                     RegionId = pokedexTrainer.RegionId,
-                    PokemonIds = pokedexTrainer.PokemonIds,
+                    PokemonId = (int)pokedexTrainer.PokemonId,
                     DateOfJoining = pokedexTrainer.DateOfJoining
                 };
                 context.PokedexTrainers.Update(pokedexTrainerDto);

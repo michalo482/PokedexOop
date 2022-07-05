@@ -13,18 +13,18 @@ namespace Pokedex_oop_domain.Models
         public string FullName { get; }
         public int Age { get; }
         public int RegionId { get; }
-        public List<int> PokemonIds { get; }
+        public int? PokemonId { get; }
         public DateTime DateOfJoining { get; }
 
 
-        public PokedexTrainer(Guid id, string nickName, string fullName, int age, int regionId, List<int> pokemonIds, DateTime dateOfJoining)
+        public PokedexTrainer(Guid id, string nickName, string fullName, int age, int regionId, int pokemons, DateTime dateOfJoining)
         {
             Id = id;
             NickName = nickName;
             FullName = fullName;
             Age = age;
             RegionId = regionId;
-            PokemonIds = pokemonIds;
+            PokemonId = pokemons;
             DateOfJoining = dateOfJoining;
         }
     }

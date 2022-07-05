@@ -25,7 +25,7 @@ namespace Pokedex_oop_entity_framework.Queries
             {
                 IEnumerable<PokedexTrainerDto> pokedexTrainerDtos = await context.PokedexTrainers.ToListAsync();
 
-                return pokedexTrainerDtos.Select(y => new PokedexTrainer(y.Id, y.NickName, y.FullName, y.Age, y.RegionId, y.PokemonIds, y.DateOfJoining));
+                return pokedexTrainerDtos.Select(y => new PokedexTrainer(y.Id, y.NickName, y.FullName, y.Age, y.RegionId, y.PokemonId, y.DateOfJoining));
             }
         }
     }

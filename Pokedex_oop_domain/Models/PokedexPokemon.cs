@@ -11,7 +11,8 @@ namespace Pokedex_oop_domain.Models
         public Guid Id { get; }
         public string Name { get; }
         public double Weigth { get; }
-        public string ElementType { get; }
+        public int PokedexPokemonElementTypeId { get; }
         public int RegionId { get; }
+        public int TrainerId { get; }
     }
 }
